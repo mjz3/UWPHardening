@@ -1,0 +1,51 @@
+﻿  Building 'KMDFInjectionDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\KMDFInjectionDriver.inf [Version] section with DriverVer=07/07/2017,17.32.0.184
+  driver.c
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(80): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(81): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(87): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(150): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(201): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(210): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(220): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\utils.h(61): warning C4995: 'RtlStringLengthWorkerW': name was marked as #pragma deprecated
+driver.c(114): warning C4100: 'pRegistryPath': unreferenced formal parameter
+driver.c(149): warning C4100: 'DeviceObject': unreferenced formal parameter
+  utils.c
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(80): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(81): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(87): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(150): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(201): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(210): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\structs.h(220): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\mojta\desktop\to be uploaded\github\uwphardening\system wide injection driver\kmdfinjectiondriver\utils.h(61): warning C4995: 'RtlStringLengthWorkerW': name was marked as #pragma deprecated
+utils.c(6): warning C4100: 'SystemArgument2': unreferenced formal parameter
+utils.c(6): warning C4100: 'SystemArgument1': unreferenced formal parameter
+utils.c(5): warning C4100: 'NormalContext': unreferenced formal parameter
+utils.c(5): warning C4100: 'NormalRoutine': unreferenced formal parameter
+utils.c(923): warning C4201: nonstandard extension used: nameless struct/union
+utils.c(928): warning C4201: nonstandard extension used: nameless struct/union
+utils.c(933): warning C4201: nonstandard extension used: nameless struct/union
+utils.c(938): warning C4201: nonstandard extension used: nameless struct/union
+  Generating Code...
+  KMDFInjectionDriver.vcxproj -> C:\Users\mojta\Desktop\to be uploaded\github\UWPHardening\System Wide Injection Driver\x64\Debug\KMDFInjectionDriver.sys
+  KMDFInjectionDriver.vcxproj -> C:\Users\mojta\Desktop\to be uploaded\github\UWPHardening\System Wide Injection Driver\x64\Debug\KMDFInjectionDriver.pdb (Full PDB)
+  Done Adding Additional Store
+  Successfully signed: C:\Users\mojta\Desktop\to be uploaded\github\UWPHardening\System Wide Injection Driver\x64\Debug\KMDFInjectionDriver.sys
+  
+  Driver is a Universal Driver.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\mojta\Desktop\to be uploaded\github\UWPHardening\System Wide Injection Driver\x64\Debug\KMDFInjectionDriver\kmdfinjectiondriver.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\mojta\Desktop\to be uploaded\github\UWPHardening\System Wide Injection Driver\x64\Debug\KMDFInjectionDriver\kmdfinjectiondriver.cat
+  

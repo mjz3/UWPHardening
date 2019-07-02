@@ -1,0 +1,86 @@
+;
+; KMDFInjectionDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=KMDFInjectionDriver.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+
+[DestinationDirs]
+DefaultDestDir = 12
+KMDFInjectionDriver_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+KMDFInjectionDriver.sys  = 1,,
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%KMDFInjectionDriver.DeviceDesc%=KMDFInjectionDriver_Device, Root\KMDFInjectionDriver ; TODO: edit hw-id
+
+[KMDFInjectionDriver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+KMDFInjectionDriver.sys
+
+;-------------- Service installation
+[KMDFInjectionDriver_Device.NT.Services]
+AddService = KMDFInjectionDriver,%SPSVCINST_ASSOCSERVICE%, KMDFInjectionDriver_Service_Inst
+
+; -------------- KMDFInjectionDriver driver install sections
+[KMDFInjectionDriver_Service_Inst]
+DisplayName    = %KMDFInjectionDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\KMDFInjectionDriver.sys
+
+;
+;--- KMDFInjectionDriver_Device Coinstaller installation ------
+;
+
+[KMDFInjectionDriver_Device.NT.CoInstallers]
+AddReg=KMDFInjectionDriver_Device_CoInstaller_AddReg
+CopyFiles=KMDFInjectionDriver_Device_CoInstaller_CopyFiles
+
+[KMDFInjectionDriver_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[KMDFInjectionDriver_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[KMDFInjectionDriver_Device.NT.Wdf]
+KmdfService =  KMDFInjectionDriver, KMDFInjectionDriver_wdfsect
+[KMDFInjectionDriver_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "KMDFInjectionDriver Installation Disk"
+KMDFInjectionDriver.DeviceDesc = "KMDFInjectionDriver Device"
+KMDFInjectionDriver.SVCDESC = "KMDFInjectionDriver Service"
